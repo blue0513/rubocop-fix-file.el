@@ -2,6 +2,10 @@
 
 Execute rubocop --auto-correct on Emacs silently
 
+![image](./images/image.gif)
+
+This Gif shows that `"` turns into `'` by executing `rubocop-fix-file`.
+
 ## Setup
 
 ```el
