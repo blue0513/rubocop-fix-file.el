@@ -18,7 +18,7 @@
 
 ;; Author: blue0513
 ;; URL: https://github.com/blue0513
-;; Version: 0.0.1
+;; Version: 0.0.2
 
 ;;; Commentary:
 
@@ -29,6 +29,13 @@
 ;;   `M-x rubocop-fix-file`
 
 ;;; Code:
+
+(define-minor-mode rubocop-fix-file-mode
+  "Enable format-on-save by applying rubocop-fix-file."
+  :lighter " rubocop-fix-file"
+  (if rubocop-fix-file-mode
+      (add-hook 'before-save-hook 'rubocop-fix-file)
+    (remove-hook 'before-save-hook 'rubocop-fix-file)))
 
 (defun rubocop-fix-file ()
   "Execute rubocop auto correct."
